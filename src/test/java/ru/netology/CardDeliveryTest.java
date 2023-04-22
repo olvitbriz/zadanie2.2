@@ -2,7 +2,7 @@ package ru.netology;
 
 
 import com.codeborne.selenide.Condition;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
@@ -12,16 +12,12 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-
 public class CardDeliveryTest {
     private String generateDate(int addDays, String pattern) {
 
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
-
-
     @Test
-
     public void firstOne() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Саратов");
